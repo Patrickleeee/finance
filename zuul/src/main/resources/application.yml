@@ -1,0 +1,30 @@
+# 注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+# 本服务的端口
+server:
+  port:  8004
+
+spring:
+  # 服务在注册中心的名称
+  application:
+    name: zuul
+  # 在监控中心注册
+  boot:
+    admin:
+      client:
+        instance:
+          name: admin-server
+
+# 对外公开所有端点，用于监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+

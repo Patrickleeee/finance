@@ -1,0 +1,27 @@
+# 服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+
+# 启动端口
+server:
+  port: 8002
+
+# 注册在服务中心的名称
+spring:
+  application:
+    name: service-finance
+  # 在监控中心注册
+    boot:
+      admin:
+        client:
+          instance:
+            name: admin-server
+
+# 对外公开所有端点，用于监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
